@@ -4,8 +4,11 @@ import './index.css';
 import TheUnit from './TheUnit';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const SEED_SELECTOR = 'SEED'  
+const SEED = ReactDOM.createRoot(
+  document.querySelector(SEED_SELECTOR)
+)
+SEED.render(
   <React.StrictMode>
     <TheUnit />
   </React.StrictMode>

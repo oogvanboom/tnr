@@ -6,7 +6,7 @@ const JUST_CHILL = () => {}
 const Nubbin = () => {(<div className="Nubbin" />)}
 
 const Key = ({ children, number, on }) => {
-	const PASS_NUMBER = () => ?on({ number })
+	const PASS_NUMBER = () => on && on({ number })
 
 	return (
 		<div 
@@ -24,6 +24,8 @@ const Keybard = ({ on_key }) => {
 	let key = 0
 	const keys = []
 	while(true) {
+		const reached_key_count = key > COUNT - 1
+		if(reached_key_count) { break }
 		keys.push(
 			<Key
 				number={key}
@@ -33,7 +35,6 @@ const Keybard = ({ on_key }) => {
 			</Key>
 		)
 		key++
-		key > COUNT - 1 && break
 	}
 	return (
 		<div 
